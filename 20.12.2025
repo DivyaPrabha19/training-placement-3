@@ -1,0 +1,162 @@
+1.Count Characters (Without Spaces)
+import java.util.Scanner;
+
+class CharCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int count = 0;
+
+        for (char c : s.toCharArray()) {
+            if (c != ' ')
+                count++;
+        }
+        System.out.println(count);
+    }
+}
+
+2.Check Leap Year
+import java.util.Scanner;
+
+class LeapYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int year = sc.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            System.out.println("Leap Year");
+        else
+            System.out.println("Not Leap Year");
+    }
+}
+
+3. Power of a Number
+import java.util.Scanner;
+
+class Power {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int base = sc.nextInt();
+        int exp = sc.nextInt();
+        int result = 1;
+
+        for (int i = 1; i <= exp; i++) {
+            result *= base;
+        }
+        System.out.println(result);
+    }
+}
+
+4.Find Frequency of Characters
+import java.util.Scanner;
+
+class CharFrequency {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().toLowerCase();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == ' ') continue;
+
+            int count = 1;
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(j) == c) {
+                    count++;
+                    s = s.substring(0, j) + s.substring(j + 1);
+                    j--;
+                }
+            }
+            System.out.println(c + " : " + count);
+        }
+    }
+}
+
+5. Remove All Spaces from String
+import java.util.Scanner;
+
+class RemoveSpaces {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(s.replaceAll("\\s", ""));
+    }
+}
+
+6. Find Smallest Element in Array
+class SmallestArray {
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 8, 1, 2};
+        int min = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min)
+                min = arr[i];
+        }
+        System.out.println(min);
+    }
+}
+
+7.Matrix Addition
+class MatrixAdd {
+    public static void main(String[] args) {
+        int[][] a = {{1, 2}, {3, 4}};
+        int[][] b = {{5, 6}, {7, 8}};
+        int[][] sum = new int[2][2];
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                sum[i][j] = a[i][j] + b[i][j];
+            }
+        }
+
+        for (int[] row : sum) {
+            for (int n : row)
+                System.out.print(n + " ");
+            System.out.println();
+        }
+    }
+}
+
+8. Find Duplicate Elements in Array
+class DuplicateArray {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 2, 4, 5, 1};
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j])
+                    System.out.print(arr[i] + " ");
+            }
+        }
+    }
+}
+
+9. Reverse Words in a Sentence
+import java.util.Scanner;
+
+class ReverseWords {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String[] words = s.split(" ");
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            System.out.print(words[i] + " ");
+        }
+    }
+}
+
+10 Print Pattern (Right Triangle)
+class Pattern {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
