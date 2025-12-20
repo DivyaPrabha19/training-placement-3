@@ -1,0 +1,174 @@
+1. Reverse a String
+import java.util.Scanner;
+
+class ReverseString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String rev = "";
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            rev += s.charAt(i);
+        }
+        System.out.println(rev);
+    }
+}
+
+2. Palindrome String
+import java.util.Scanner;
+
+class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String rev = "";
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            rev += s.charAt(i);
+        }
+
+        if (s.equals(rev))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+3. Fibonacci Series
+class Fibonacci {
+    public static void main(String[] args) {
+        int n = 10, a = 0, b = 1;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+}
+
+4. Prime Number
+import java.util.Scanner;
+
+class Prime {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        boolean prime = true;
+
+        if (n <= 1) prime = false;
+
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                prime = false;
+                break;
+            }
+        }
+
+        if (prime)
+            System.out.println("Prime");
+        else
+            System.out.println("Not Prime");
+    }
+}
+
+5. Factorial of a Number
+import java.util.Scanner;
+
+class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long fact = 1;
+
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        System.out.println(fact);
+    }
+}
+
+6. Armstrong Number
+import java.util.Scanner;
+
+class Armstrong {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = n, sum = 0;
+
+        while (n > 0) {
+            int d = n % 10;
+            sum += d * d * d;
+            n /= 10;
+        }
+
+        if (temp == sum)
+            System.out.println("Armstrong");
+        else
+            System.out.println("Not Armstrong");
+    }
+}
+
+7. Swap Two Numbers (Without Temp)
+class Swap {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println(a + " " + b);
+    }
+}
+
+8. Count Vowels in a String
+import java.util.Scanner;
+
+class VowelsCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().toLowerCase();
+        int count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+                count++;
+        }
+        System.out.println(count);
+    }
+}
+
+9. Find Largest Element in an Array
+class LargestArray {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 5, 40, 30};
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max)
+                max = arr[i];
+        }
+        System.out.println(max);
+    }
+}
+
+10.Remove Duplicate Characters from String
+import java.util.Scanner;
+
+class RemoveDuplicates {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String result = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            if (!result.contains(String.valueOf(s.charAt(i)))) {
+                result += s.charAt(i);
+            }
+        }
+        System.out.println(result);
+    }
+}
