@@ -1,0 +1,168 @@
+1.Check Pangram
+class Pangram {
+    public static void main(String[] args) {
+        String s = "The quick brown fox jumps over the lazy dog".toLowerCase();
+        boolean[] present = new boolean[26];
+
+        for (char c : s.toCharArray()) {
+            if (c >= 'a' && c <= 'z')
+                present[c - 'a'] = true;
+        }
+
+        for (boolean b : present) {
+            if (!b) {
+                System.out.println("Not Pangram");
+                return;
+            }
+        }
+        System.out.println("Pangram");
+    }
+}
+
+2.Find Missing Number in Array
+class MissingNumber {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 5};
+        int n = 5;
+        int sum = n * (n + 1) / 2;
+        int arrSum = 0;
+
+        for (int x : arr)
+            arrSum += x;
+
+        System.out.println(sum - arrSum);
+    }
+}
+
+3. Check Substring
+class SubstringCheck {
+    public static void main(String[] args) {
+        String s1 = "zoho corporation";
+        String s2 = "corp";
+
+        if (s1.contains(s2))
+            System.out.println("Substring exists");
+        else
+            System.out.println("Not found");
+    }
+}
+
+4. Count Uppercase, Lowercase, Digits
+class CountTypes {
+    public static void main(String[] args) {
+        String s = "Zoho2025Java";
+        int upper = 0, lower = 0, digit = 0;
+
+        for (char c : s.toCharArray()) {
+            if (Character.isUpperCase(c)) upper++;
+            else if (Character.isLowerCase(c)) lower++;
+            else if (Character.isDigit(c)) digit++;
+        }
+
+        System.out.println("Upper: " + upper);
+        System.out.println("Lower: " + lower);
+        System.out.println("Digits: " + digit);
+    }
+}
+
+5. Reverse Each Word in String
+class ReverseEachWord {
+    public static void main(String[] args) {
+        String s = "Welcome to Zoho";
+        String[] words = s.split(" ");
+
+        for (String w : words) {
+            String rev = "";
+            for (int i = w.length() - 1; i >= 0; i--)
+                rev += w.charAt(i);
+            System.out.print(rev + " ");
+        }
+    }
+}
+
+6.First Non-Repeated Character
+class FirstNonRepeated {
+    public static void main(String[] args) {
+        String s = "swiss";
+
+        for (int i = 0; i < s.length(); i++) {
+            boolean unique = true;
+            for (int j = 0; j < s.length(); j++) {
+                if (i != j && s.charAt(i) == s.charAt(j)) {
+                    unique = false;
+                    break;
+                }
+            }
+            if (unique) {
+                System.out.println(s.charAt(i));
+                break;
+            }
+        }
+    }
+}
+
+7.Check Perfect Number
+class PerfectNumber {
+    public static void main(String[] args) {
+        int n = 28, sum = 0;
+
+        for (int i = 1; i <= n / 2; i++) {
+            if (n % i == 0)
+                sum += i;
+        }
+
+        if (sum == n)
+            System.out.println("Perfect Number");
+        else
+            System.out.println("Not Perfect");
+    }
+}
+
+8. Matrix Transpose
+class MatrixTranspose {
+    public static void main(String[] args) {
+        int[][] a = {{1, 2, 3}, {4, 5, 6}};
+        int[][] t = new int[3][2];
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                t[j][i] = a[i][j];
+            }
+        }
+
+        for (int[] row : t) {
+            for (int x : row)
+                System.out.print(x + " ");
+            System.out.println();
+        }
+    }
+}
+
+9.Find Common Elements in Two Arrays
+class CommonElements {
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4};
+        int[] b = {3, 4, 5, 6};
+
+        for (int i : a) {
+            for (int j : b) {
+                if (i == j)
+                    System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+10.Print Number Pattern
+class NumberPattern {
+    public static void main(String[] args) {
+        int n = 4;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
