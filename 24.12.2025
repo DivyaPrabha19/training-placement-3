@@ -1,0 +1,81 @@
+1. Check String Rotation
+class StringRotation {
+    public static void main(String[] args) {
+        String s1 = "ABCD";
+        String s2 = "CDAB";
+
+        if (s1.length() == s2.length() && (s1 + s1).contains(s2))
+            System.out.println("Rotation");
+        else
+            System.out.println("Not Rotation");
+    }
+}
+
+2. Find Majority Element in Array
+
+(appears more than n/2 times)
+
+class MajorityElement {
+    public static void main(String[] args) {
+        int[] arr = {2, 2, 1, 2, 3, 2, 2};
+        int count, n = arr.length;
+
+        for (int i = 0; i < n; i++) {
+            count = 0;
+            for (int j = 0; j < n; j++) {
+                if (arr[i] == arr[j])
+                    count++;
+            }
+            if (count > n / 2) {
+                System.out.println(arr[i]);
+                return;
+            }
+        }
+        System.out.println("No Majority Element");
+    }
+}
+
+3.Check Palindrome using Recursion
+class PalindromeRecursion {
+    static boolean isPalindrome(String s, int start, int end) {
+        if (start >= end)
+            return true;
+        if (s.charAt(start) != s.charAt(end))
+            return false;
+        return isPalindrome(s, start + 1, end - 1);
+    }
+
+    public static void main(String[] args) {
+        String s = "madam";
+        System.out.println(isPalindrome(s, 0, s.length() - 1));
+    }
+}
+
+4. Find Pair with Given Sum
+class PairSum {
+    public static void main(String[] args) {
+        int[] arr = {1, 4, 5, 6, 8};
+        int sum = 10;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == sum)
+                    System.out.println(arr[i] + " " + arr[j]);
+            }
+        }
+    }
+}
+
+5. Count Number of Set Bits (1s) in Binary
+class SetBits {
+    public static void main(String[] args) {
+        int n = 13; // binary 1101
+        int count = 0;
+
+        while (n > 0) {
+            count += n & 1;
+            n >>= 1;
+        }
+        System.out.println(count);
+    }
+}
