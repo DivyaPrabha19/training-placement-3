@@ -1,0 +1,63 @@
+1. Binary Search
+arr = list(map(int, input().split()))
+key = int(input())
+
+low, high = 0, len(arr) - 1
+found = False
+
+while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == key:
+        found = True
+        break
+    elif arr[mid] < key:
+        low = mid + 1
+    else:
+        high = mid - 1
+
+print("Found" if found else "Not Found")
+
+2. Check Balanced Parentheses
+s = input()
+stack = []
+pair = {')':'(', '}':'{', ']':'['}
+balanced = True
+
+for ch in s:
+    if ch in "({[":
+        stack.append(ch)
+    elif ch in ")}]":
+        if not stack or stack.pop() != pair[ch]:
+            balanced = False
+            break
+
+if stack:
+    balanced = False
+
+print("Balanced" if balanced else "Not Balanced")
+
+3. Find Intersection of Two Lists
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+print(list(set(a) & set(b)))
+
+4. Count Set Bits (1s) in Binary
+n = int(input())
+count = 0
+
+while n > 0:
+    count += n & 1
+    n >>= 1
+
+print(count)
+
+5.Find First Repeating Character
+s = input()
+seen = set()
+
+for ch in s:
+    if ch in seen:
+        print(ch)
+        break
+    seen.add(ch)
