@@ -1,0 +1,95 @@
+1. Count Frequency of Elements using HashMap
+import java.util.HashMap;
+
+class FrequencyHashMap {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 3, 3};
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int n : arr) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+
+        System.out.println(map);
+    }
+}
+
+2. Remove Duplicate Elements using ArrayList
+import java.util.ArrayList;
+
+class RemoveDuplicatesList {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 4, 4};
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int n : arr) {
+            if (!list.contains(n))
+                list.add(n);
+        }
+
+        System.out.println(list);
+    }
+}
+
+3. Sort Strings Alphabetically
+import java.util.Arrays;
+
+class SortStrings {
+    public static void main(String[] args) {
+        String[] arr = {"Zoho", "Apple", "Google", "Microsoft"};
+        Arrays.sort(arr);
+
+        for (String s : arr)
+            System.out.print(s + " ");
+    }
+}
+
+4. Check Balanced Parentheses
+import java.util.Stack;
+
+class BalancedParentheses {
+    public static void main(String[] args) {
+        String s = "{[()]}";
+        Stack<Character> stack = new Stack<>();
+        boolean balanced = true;
+
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[')
+                stack.push(c);
+            else {
+                if (stack.isEmpty()) {
+                    balanced = false;
+                    break;
+                }
+                char open = stack.pop();
+                if ((c == ')' && open != '(') ||
+                    (c == '}' && open != '{') ||
+                    (c == ']' && open != '[')) {
+                    balanced = false;
+                    break;
+                }
+            }
+        }
+
+        if (!stack.isEmpty()) balanced = false;
+        System.out.println(balanced ? "Balanced" : "Not Balanced");
+    }
+}
+
+5. Linear Search in Array
+class LinearSearch {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        int key = 30;
+
+        boolean found = false;
+        for (int n : arr) {
+            if (n == key) {
+                found = true;
+                break;
+            }
+        }
+
+        System.out.println(found ? "Found" : "Not Found");
+    }
+}
