@@ -1,0 +1,43 @@
+1. Check Leap Year
+year = int(input())
+
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print("Leap Year")
+else:
+    print("Not Leap Year")
+
+2. Find Second Largest Number in a List
+arr = list(map(int, input().split()))
+arr = list(set(arr))
+arr.sort()
+print(arr[-2])
+
+3. Remove Duplicates from a List
+arr = list(map(int, input().split()))
+unique = []
+
+for x in arr:
+    if x not in unique:
+        unique.append(x)
+
+print(unique)
+
+4. Check Palindrome Using Recursion
+def is_palindrome(s):
+    if len(s) <= 1:
+        return True
+    if s[0] != s[-1]:
+        return False
+    return is_palindrome(s[1:-1])
+
+s = input()
+print(is_palindrome(s))
+
+5. Find Frequency of Characters in a String
+s = input()
+freq = {}
+
+for ch in s:
+    freq[ch] = freq.get(ch, 0) + 1
+
+print(freq)
