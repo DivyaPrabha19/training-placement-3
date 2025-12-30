@@ -1,0 +1,40 @@
+1. Check Even or Odd
+n = int(input())
+if n % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+2. Find GCD of Two Numbers
+a, b = map(int, input().split())
+
+while b != 0:
+    a, b = b, a % b
+
+print(a)
+
+3. Find LCM of Two Numbers
+a, b = map(int, input().split())
+
+def gcd(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+lcm = (a * b) // gcd(a, b)
+print(lcm)
+
+4.Reverse a Number
+n = int(input())
+rev = 0
+
+while n > 0:
+    rev = rev * 10 + n % 10
+    n //= 10
+
+print(rev)
+
+5. Count Words in a Sentence
+s = input().strip()
+words = s.split()
+print(len(words))
