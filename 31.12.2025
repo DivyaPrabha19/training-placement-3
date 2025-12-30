@@ -1,0 +1,34 @@
+1. Check Anagram Strings
+s1 = input().replace(" ", "").lower()
+s2 = input().replace(" ", "").lower()
+
+if sorted(s1) == sorted(s2):
+    print("Anagram")
+else:
+    print("Not Anagram")
+
+2.Find Missing Number in a List
+arr = list(map(int, input().split()))
+n = len(arr) + 1
+expected_sum = n * (n + 1) // 2
+print(expected_sum - sum(arr))
+
+3. Find Common Elements Between Two Lists
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+common = list(set(a) & set(b))
+print(common)
+
+4.Check if a List is Sorted
+arr = list(map(int, input().split()))
+
+if arr == sorted(arr):
+    print("Sorted")
+else:
+    print("Not Sorted")
+
+5.Find Longest Word in a Sentence
+s = input()
+words = s.split()
+print(max(words, key=len))
