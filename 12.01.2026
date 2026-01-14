@@ -1,0 +1,183 @@
+1. Sum of Digits of a Number
+import java.util.Scanner;
+
+class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        System.out.println(sum);
+    }
+}
+
+2. Reverse a Number
+import java.util.Scanner;
+
+class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int rev = 0;
+
+        while (n > 0) {
+            rev = rev * 10 + n % 10;
+            n /= 10;
+        }
+        System.out.println(rev);
+    }
+}
+
+3. Palindrome Number
+import java.util.Scanner;
+
+class PalindromeNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = n, rev = 0;
+
+        while (n > 0) {
+            rev = rev * 10 + n % 10;
+            n /= 10;
+        }
+
+        if (temp == rev)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+4. Find GCD of Two Numbers
+import java.util.Scanner;
+
+class GCD {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        System.out.println(a);
+    }
+}
+
+5. Find LCM of Two Numbers
+import java.util.Scanner;
+
+class LCM {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int gcd = a, temp = b;
+
+        while (temp != 0) {
+            int r = gcd % temp;
+            gcd = temp;
+            temp = r;
+        }
+
+        int lcm = (a * b) / gcd;
+        System.out.println(lcm);
+    }
+}
+
+6. Check Even or Odd
+import java.util.Scanner;
+
+class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+    }
+}
+
+7. Count Words in a Sentence
+import java.util.Scanner;
+
+class WordCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().trim();
+
+        int count = s.isEmpty() ? 0 : s.split("\\s+").length;
+        System.out.println(count);
+    }
+}
+
+8. Sort an Array (Bubble Sort)
+class BubbleSort {
+    public static void main(String[] args) {
+        int[] arr = {5, 1, 4, 2, 8};
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        for (int n : arr)
+            System.out.print(n + " ");
+    }
+}
+
+9. Second Largest Element in Array
+class SecondLargest {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 5, 40, 30};
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+
+        for (int n : arr) {
+            if (n > first) {
+                second = first;
+                first = n;
+            } else if (n > second && n != first) {
+                second = n;
+            }
+        }
+        System.out.println(second);
+    }
+}
+
+10. Check Anagram Strings
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Anagram {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        char[] a = s1.replaceAll("\\s", "").toLowerCase().toCharArray();
+        char[] b = s2.replaceAll("\\s", "").toLowerCase().toCharArray();
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        if (Arrays.equals(a, b))
+            System.out.println("Anagram");
+        else
+            System.out.println("Not Anagram");
+    }
+}
